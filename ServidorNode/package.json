@@ -1,0 +1,14 @@
+{
+  "name": "servidornode",
+  "version": "1.0.0",
+  "description": "Back-end de la app LaboratorioAR",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Pablo Salamanca Cortes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
