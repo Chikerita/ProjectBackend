@@ -11,6 +11,10 @@ appServer.listen(3000, () => {
     console.log('SERVER IS RUNING IN PORT 3000');
 });
 
+appServer.get('/gettest', (req, res) => {
+    res.send('Funciona');
+});
+
 appServer.get('/get', (req, res) => {
     MongoClient.connect(url, function (err, client) {
         if (err) throw err;
