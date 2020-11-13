@@ -6,13 +6,13 @@ const PORT = process.env.PORT || 3000;
 appServer.use(express.json());
 
 var url = "mongodb+srv://admin:btCafd9cdd1d29fY@pruebadedespliegue.uwb3h.mongodb.net/mydb?retryWrites=true&w=majority";
-var MongoClient = new mongo.MongoClient(url);
 
 appServer.listen(PORT, () => {
     console.log("SERVER IS LISTEN ON PORT:" , PORT);
 });
 
 appServer.get('/get', async (req, res) => {
+    var MongoClient = new mongo.MongoClient(url);
     const results = await findQuestionarys(MongoClient);
     res.send(results);
     console.log("Respuesta enviada");
@@ -36,6 +36,7 @@ async function findQuestionarys(client) {
 }
 
 appServer.put('/put', async (req, res) => {
+    var MongoClient = new mongo.MongoClient(url);
     addQuestionary(MongoClient, req.body);
     res.send("Cuestionario agregado");
 });
